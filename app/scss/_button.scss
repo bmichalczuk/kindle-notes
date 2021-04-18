@@ -1,0 +1,13 @@
+.button {
+    padding: 1em 2.5em;
+    border: 1px solid ;
+    text-transform: uppercase;
+    background: $secondaryColor;
+    color: $thirdColor;
+    letter-spacing: 1px;
+    font-weight: bold;
+    &:hover,
+    &:focus {
+        cursor: pointer;
+    }
+}

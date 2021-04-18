@@ -1,0 +1,15 @@
+.header {
+    background: $primaryColor;
+    color: $thirdColor;
+    padding :2em;
+    text-align: center;
+    border-bottom: 20px solid $secondaryColor;
+    &__heading {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-family: Oswald, sans-serif;
+    }
+    &__subheading {
+        letter-spacing: 2px;
+    }
+}

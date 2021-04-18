@@ -1,0 +1,19 @@
+@import "./scss/colors";
+@import "./scss/header";
+@import "./scss//content";
+@import "./scss/filebox";
+@import "./scss//button";
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+:root {
+    line-height: 1.5;
+}
+body {
+    padding: 2em;
+    font-family: "EB Garamond", serif;
+    color: $primaryColor;
+}
