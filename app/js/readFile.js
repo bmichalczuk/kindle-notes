@@ -1,5 +1,6 @@
+const reader = new FileReader();
+
 const readFile = (file, callback) => {
-    const reader = new FileReader();
     reader.onload = (e) => callback(e.target.result);
     reader.readAsText(file)
 };
