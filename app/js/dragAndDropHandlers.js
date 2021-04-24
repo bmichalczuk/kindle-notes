@@ -1,4 +1,6 @@
 import {dropArea} from "./domNodes";
+import readFile from "./readFile";
+import {setText} from "./state";
 
 export const handleDragEnter = (e) => {
     e.stopPropagation();
@@ -17,5 +19,5 @@ export const handleDrop = (e) => {
     e.preventDefault();
     dropArea.classList.add("file-box--succes");
     dropArea.classList.remove("file-box--hover");
-    console.log(e.dataTransfer.files);
+    readFile(e.dataTransfer.files[0], setText);
 };

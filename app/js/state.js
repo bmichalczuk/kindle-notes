@@ -1,5 +1,5 @@
 let text = null;
 
-export const getText = () => txt;
+export const getText = () => text;
 
-export const setText = () => text = val;
+export const setText = (val) => text = val;
