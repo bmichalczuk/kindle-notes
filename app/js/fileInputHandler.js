@@ -1,10 +1,9 @@
 import readFile from "./readFile";
 import {setText} from "./state";
+import {eventGuard} from "./helpers";
 
 const handleFileInput = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
     readFile(e.target.files[0], setText);
 };
 
-export default handleFileInput;
+export default eventGuard(handleFileInput);
