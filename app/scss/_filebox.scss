@@ -5,12 +5,7 @@
     border: 1px dashed;
     margin: 2em auto;
     transition: .3s;
-
-    &--succes {
-        background-color: $succesColor;
-        padding: .5em;
-
-    }
+    min-height: 4em;
 
     &--warning {
         background-color: $warningColor;
@@ -19,6 +14,67 @@
     &--hover {
         border: 1px solid;
         background-color: $succesColor;
+    }
+
+    &--succes,
+    &--succes &--hover {
+        background-color: $succesColor;
+        border: 1px dashed;
+        padding: .5em;
+
+    }
+
+    &__file-info {
+        display: none;
+    }
+
+    &--succes &__file-info {
+        display: block;
+        position: relative;
+    }
+
+    &__remove {
+        border: none;
+        position: absolute;
+        background: transparent;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        right: 2px;
+        top: 2px;
+        transition: .2s;
+
+        &:hover,
+        &:focus {
+            transform: scale(1.1);
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            height: 3px;
+            display: block;
+            width: 100%;
+            background: black;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__name {
+        margin: .5em 2em;
+        font-size: 1.5em;
+        font-weight: bold;
     }
 
     &__label {
@@ -39,6 +95,12 @@
         clip: rect(1px 1px 1px 1px); 
         clip: rect(1px, 1px, 1px, 1px);
         white-space: nowrap; 
+    }
+
+    &--succes &__input,
+    &--succes span,
+    &--succes &__label {
+        display: none;
     }
     
 }
