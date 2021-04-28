@@ -11,3 +11,7 @@ export const markSuccesUpload = () => {
     !dropArea.classList.contains("file-box--succes") && dropArea.classList.add("file-box--succes");
 };
 
+export const removeSuccesUpload = () => {
+    dropArea.classList.remove("file-box--succes");
+};
+
