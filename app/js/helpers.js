@@ -25,4 +25,6 @@ export const getAuthor = (bookTitle) => bookTitle.substring(bookTitle.indexOf(au
 
 export const splitText = (divider) => (text) => text.split(divider);
 
+export const extractEntries = splitText(entryDivider);
+
 

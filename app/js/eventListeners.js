@@ -1,7 +1,8 @@
 import {handleDragEnter,handleDragLeave,handleDrop} from "./dragAndDropHandlers";
-import {dropArea, fileInpt, removeBtn} from "./domNodes";
+import {dropArea, fileInpt, removeBtn, parseBtn} from "./domNodes";
 import handleFileInput from "./fileInputHandler";
 import removeFile from "./removeFile";
+import handleParseBtn from "./handleParseBtn";
 
 dropArea.addEventListener("dragenter", handleDragEnter);
 
@@ -14,4 +15,6 @@ dropArea.addEventListener("drop", handleDrop);
 fileInpt.addEventListener("change", handleFileInput);
 
 removeBtn.addEventListener("click", removeFile);
+
+parseBtn.addEventListener("click", handleParseBtn);
 
