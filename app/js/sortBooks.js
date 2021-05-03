@@ -1,4 +1,3 @@
-
 import {getBookTitle, getAuthor} from "./helpers";
 
 
@@ -16,9 +15,7 @@ const getBook = (books, entry) => {
     return books;
 };
 
-const sortBooks = entries => {
-    return entries.reduce(getBook, {});
-};
+const sortBooks = (entries) => entries.reduce(getBook, {});
 
 export default sortBooks;
 

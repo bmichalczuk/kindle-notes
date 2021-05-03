@@ -27,4 +27,6 @@ export const splitText = (divider) => (text) => text.split(divider);
 
 export const extractEntries = splitText(entryDivider);
 
+export const compose = (...fns) => fns;//
+
 

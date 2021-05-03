@@ -1,4 +1,5 @@
-const createDownloadLink = (name, content) => {
+const createDownloadLink = ({title, entries}) => {
+    const content = entries.join();
     const text = new Blob([content], { type: 'text/plain' });
     
     const a = document.createElement("a");
@@ -9,8 +10,8 @@ const createDownloadLink = (name, content) => {
         a.href = `data:text/plain;charset=utf-8,${encodeURIComponent(text)}`;
     }
     
-    a.download = name;
-    a.textContent = name;
+    a.download = title;
+    a.textContent = title;
     a.class = "result__download";
     return a;
 };
