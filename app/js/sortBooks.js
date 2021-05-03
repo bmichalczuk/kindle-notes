@@ -1,3 +1,4 @@
+
 import {getBookTitle, getAuthor} from "./helpers";
 
 
@@ -9,6 +10,7 @@ const getBook = (books, entry) => {
         books[title] = {};
         books[title].entries = [];
     }
+    books[title].title = title;
     books[title].entries.push(entry.substring(entry.indexOf(")") + 1 ));
     books[title].author = author;
     return books;

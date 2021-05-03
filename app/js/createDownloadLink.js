@@ -11,7 +11,7 @@ const createDownloadLink = (name, content) => {
     
     a.download = name;
     a.textContent = name;
-    a.class = "link--download";
+    a.class = "result__download";
     return a;
 };
 
