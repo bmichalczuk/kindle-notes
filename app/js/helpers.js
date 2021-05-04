@@ -1,5 +1,6 @@
 import {dropArea} from "./domNodes";
-import {titleDivider, entryDivider, authorEndSing, authorStargSign} from "./consts";
+import {entryDivider, authorEndSing, authorStargSign} from "./consts";
+import createDownloadLink from "./createDownloadLink";
 
 export const eventGuard = func => e => {
     e.preventDefault();
@@ -27,6 +28,8 @@ export const splitText = (divider) => (text) => text.split(divider);
 
 export const extractEntries = splitText(entryDivider);
 
-export const compose = (...fns) => fns;//
+export const getDownloadLinks = (books) => Object.values(books).map(book => createDownloadLink(book))
+
+export const compose = (...fns) => (arg) => fns.reduce((acc, fn) => fn(acc), arg);
 
 
