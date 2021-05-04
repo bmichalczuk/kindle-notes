@@ -1,11 +1,6 @@
-import {extractEntries} from "./helpers";
+import {extractEntries, compose} from "./helpers";
 import sortBooks from "./sortBooks";
 
-
-const parseFile = (textContent) => {
-    const entries = extractEntries(textContent);
-    const books = sortBooks(entries);
-    return books;
-};
+const parseFile = (textContent) => compose(extractEntries, sortBooks)(textContent);
 
 export default parseFile;
