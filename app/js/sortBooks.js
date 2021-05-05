@@ -2,20 +2,21 @@ import {getBookTitle, getAuthor} from "./helpers";
 
 
 const getBook = (books, entry) => {
+    
     const title = getBookTitle(entry);
-    const author = getAuthor(entry);
+    const book = books.find(book => book.title === title);
+    const newEntry = entry.substring(entry.indexOf(")") + 1 );
 
-    if(!books[title]) { 
-        books[title] = {};
-        books[title].entries = [];
-    }
-    books[title].title = title;
-    books[title].entries.push(entry.substring(entry.indexOf(")") + 1 ));
-    books[title].author = author;
+    if(!book) {
+        const author = getAuthor(entry);
+        return [...books, {title, author, entries: [newEntry]}]
+    } 
+    
+    book.entries = [...book.entries, newEntry];
     return books;
 };
 
-const sortBooks = (entries) => entries.reduce(getBook, {});
+const sortBooks = (entries) => entries.reduce(getBook, []);
 
 export default sortBooks;
 

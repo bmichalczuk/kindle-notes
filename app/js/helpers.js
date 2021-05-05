@@ -28,7 +28,7 @@ export const splitText = (divider) => (text) => text.split(divider);
 
 export const extractEntries = splitText(entryDivider);
 
-export const getDownloadLinks = (books) => Object.values(books).map(book => createDownloadLink(book))
+export const getDownloadLinks = (books) => books.map(book => createDownloadLink(book))
 
 export const compose = (...fns) => (arg) => fns.reduce((acc, fn) => fn(acc), arg);
 
