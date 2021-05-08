@@ -3,6 +3,8 @@
 @import "./scss//content";
 @import "./scss/filebox";
 @import "./scss//button";
+@import "./scss//result";
+@import "./scss/footer";
 
 * {
     padding:0;
@@ -16,5 +18,9 @@ body {
     padding: 2em;
     font-family: "EB Garamond", serif;
     color: $primaryColor;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 
