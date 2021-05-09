@@ -1,11 +1,10 @@
 import {fileInpt, result} from "./domNodes";
-import {setText} from "./state";
+import {setEntries} from "./entries";
 import {removeSuccesUpload, eventGuard, clearDomNode} from "./helpers";
-
 
 const removeFile = () => {
     fileInpt.value = null;
-    setText(null);
+    setEntries(null);
     clearDomNode(result);
     removeSuccesUpload();
 };

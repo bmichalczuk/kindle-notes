@@ -1,6 +1,5 @@
 import {getBookTitle, getAuthor} from "./helpers";
 
-
 const getBook = (books, entry) => {
     
     const title = getBookTitle(entry);

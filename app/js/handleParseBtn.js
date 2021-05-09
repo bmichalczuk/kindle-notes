@@ -1,8 +1,7 @@
-import parseFile from "./parseFile";
 import {eventGuard, compose, getDownloadLinks} from "./helpers";
-import {getText} from "./state";
+import {getEntries} from "./entries";
 import displayResult from "./displayResult";
 
-const handleParseBtn = (e) => compose(getText, parseFile, getDownloadLinks, displayResult)("");
+const handleParseBtn = (e) => compose(getEntries, getDownloadLinks, displayResult)("");
 
 export default eventGuard(handleParseBtn);
