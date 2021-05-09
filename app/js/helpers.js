@@ -32,4 +32,6 @@ export const getDownloadLinks = (books) => books.map(book => createDownloadLink(
 
 export const compose = (...fns) => (arg) => fns.reduce((acc, fn) => fn(acc), arg);
 
+export const clearDomNode = (node) => [...node.children].forEach(el => el.remove());
+
 
