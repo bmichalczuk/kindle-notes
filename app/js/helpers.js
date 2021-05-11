@@ -1,5 +1,5 @@
 import {dropArea} from "./domNodes";
-import {entryDivider, authorEndSing, authorStargSign} from "./consts";
+import {entryDivider, authorEndSign, authorStartSign} from "./consts";
 import createDownloadLink from "./createDownloadLink";
 
 export const eventGuard = func => e => {
@@ -17,11 +17,11 @@ export const removeSuccesUpload = () => dropArea.classList.remove("file-box--suc
 
 
 export const getBookTitle = (entry) => {
-    const titleEnd = entry.indexOf(authorStargSign);
+    const titleEnd = entry.indexOf(authorStartSign);
     return entry.substring(0, titleEnd);
 };
 
-export const getAuthor = (bookTitle) => bookTitle.substring(bookTitle.indexOf(authorStargSign) + 1, bookTitle.indexOf(authorEndSing));
+export const getAuthor = (bookTitle) => bookTitle.substring(bookTitle.indexOf(authorStartSign) + 1, bookTitle.indexOf(authorEndSign));
 
 export const splitText = (divider) => (text) => text.split(divider);
 

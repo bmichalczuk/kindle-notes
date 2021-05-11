@@ -1,5 +1,5 @@
 import {getBookTitle, getAuthor} from "./helpers";
-
+import {authorEndSign} from "./consts";
 const getBook = (books, entry) => {
     
     const title = getBookTitle(entry);
@@ -8,7 +8,7 @@ const getBook = (books, entry) => {
         return books;
     }
     
-    const newEntry = entry.substring(entry.indexOf(")") + 1 );
+    const newEntry = entry.substring(entry.indexOf(authorEndSign) + 1 );
 
     const book = books.find(book => book.title === title);
     
