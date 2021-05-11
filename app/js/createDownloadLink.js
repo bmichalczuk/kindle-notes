@@ -1,11 +1,17 @@
 import icon from "../img/txtIcon.svg";
 
-const createDownloadLink = ({title, entries}) => {
+const createDownloadLink = ({title, author, entries}) => {
     const content = entries.join();
     const text = new Blob([content], { type: 'text/plain' });
     
     const a = document.createElement("a");
     const img = document.createElement("img");
+    const bookTitle = document.createElement("div");
+    const bookAuthor = document.createElement("div");
+    bookTitle.classList.add("download__title");
+    bookAuthor.classList.add("download__author");
+    bookTitle.textContent = title;
+    bookAuthor.textContent = `by ${author}`;
 
     if (window.webkitURL != null) {
         a.href = window.webkitURL.createObjectURL(text);
@@ -14,7 +20,8 @@ const createDownloadLink = ({title, entries}) => {
     }
     
     a.download = title;
-    a.textContent = title;
+    a.appendChild(bookTitle);
+    a.appendChild(bookAuthor);
     a.classList.add("download");
     a.title = "Click to download file";
     img.classList.add("download__icon");
