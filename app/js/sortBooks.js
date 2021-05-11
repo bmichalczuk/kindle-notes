@@ -4,6 +4,9 @@ const getBook = (books, entry) => {
     
     const title = getBookTitle(entry);
 
+    if(title.length < 1) {
+        return books;
+    }
     const newEntry = entry.substring(entry.indexOf(")") + 1 );
 
     const book = books.find(book => book.title === title);
