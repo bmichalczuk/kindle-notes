@@ -1,0 +1,57 @@
+
+
+.options {
+
+
+}
+
+.selection {
+    display: grid;
+    grid-template-columns: minmax(100px, max-content)
+                       repeat(auto-fill, 200px) 20%;
+    
+    
+    &__item {
+        list-style-type: none;
+        border: 1px solid black;
+        margin: 1em;
+        min-height: 6em;
+    }
+    &__label {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+        height: 100%;
+        width: 100%;
+        padding: .5em;
+        background-image: url("img/book.svg");
+        background-size: 3em 3em;
+        background-position: center .2em;
+        padding-top: 3.4em;
+        background-repeat: no-repeat;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__input:checked + &__label {
+        background-color: $thirdColor;
+    }
+
+    &__author {
+        display: block;
+        font-weight: normal;
+        font-size: .9em;
+    }
+}
+
