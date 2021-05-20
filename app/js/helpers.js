@@ -33,4 +33,18 @@ export const compose = (...fns) => (arg) => fns.reduce((acc, fn) => fn(acc), arg
 
 export const clearDomNode = (node) => [...node.children].forEach(el => el.remove());
 
+export const createDomElement = ({element, attributes, textContent}) => {
+
+    const el = document.createElement(element);
+
+    for (let attribute in attributes) {
+        el.setAttribute(attribute, attributes[attribute]);
+    }
+    if (textContent) {
+        el.textContent = textContent;
+    }
+    
+    return el;
+}
+
 
