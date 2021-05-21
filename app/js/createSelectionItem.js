@@ -13,9 +13,8 @@ const createSelectionItem = ({title, author}) => {
         element: "input",
         attributes: {
             id: `${title + author}`,
-            tyoe: "checkbox",
+            type: "checkbox",
             class: "selection__input",
-            checked: "false",
             title: `Add ${title}`
         }
     })
@@ -30,7 +29,7 @@ const createSelectionItem = ({title, author}) => {
 
     })
 
-    const author = createDomElement({
+    const authorName = createDomElement({
         element: "span",
         attributes: {
             class: "selection__author"
@@ -39,7 +38,7 @@ const createSelectionItem = ({title, author}) => {
     });
 
     const icon = createDomElement({
-        element: "icon",
+        element: "img",
         attributes: {
             class: "selection__icon",
             src: bookIcon,
@@ -47,17 +46,20 @@ const createSelectionItem = ({title, author}) => {
         }
     });
 
-    li.appendChild(icon);
+    label.prepend(icon);
     li.appendChild(input);
-    label.appendChild(author);
+    label.appendChild(authorName);
     li.appendChild(label);
     
+    return li;
 };
+
+export default createSelectionItem;
 
 /*
 <li class="selection__item">
+    <img src="asd" class="selection__icon" alt="book icon" />
     <input id="book4" type="checkbox" class="selection__input" checked title="Option 1" />
     <label for="book4" class="selection__label">Books3<span class="selection__author">asdasd fsd 213123</span></label> 
 </li>
-
-                    */
+*/

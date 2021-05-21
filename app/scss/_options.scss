@@ -7,8 +7,7 @@
 
 .selection {
     display: grid;
-    grid-template-columns: minmax(100px, max-content)
-                       repeat(auto-fill, 200px) 20%;
+    grid-template-columns: minmax(100px, max-content) repeat(auto-fill, 200px) 20%;
     
     
     &__item {
@@ -33,15 +32,8 @@
         align-items: center;
         text-align: center;
         font-weight: bold;
+        padding: .5em .2em;
         height: 100%;
-        width: 100%;
-        padding: .5em;
-        background-image: url("img/book.svg");
-        background-size: 3em 3em;
-        background-position: center .2em;
-        padding-top: 3.4em;
-        background-repeat: no-repeat;
-
         &:hover {
             cursor: pointer;
         }

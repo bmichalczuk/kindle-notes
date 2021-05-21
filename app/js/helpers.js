@@ -16,7 +16,6 @@ export const markSuccesUpload = () => {
 
 export const removeSuccesUpload = () => dropArea.classList.remove("file-box--succes");
 
-
 export const getBookTitle = (entry) => {
     const titleEnd = entry.indexOf(authorStartSign);
     return entry.substring(0, titleEnd);
@@ -30,7 +29,7 @@ export const extractEntries = splitText(entryDivider);
 
 export const getDownloadLinks = (books) => books.map(book => createDownloadLink(book));
 
-export const getSelectionItems = books => books.map(book => createSelectionItem);
+export const getSelectionItems = (books) => books.map(book => createSelectionItem(book));
 
 export const compose = (...fns) => (arg) => fns.reduce((acc, fn) => fn(acc), arg);
 

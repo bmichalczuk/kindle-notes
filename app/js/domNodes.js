@@ -4,3 +4,5 @@ export const fileName = document.querySelector(".file-box__name");
 export const removeBtn = document.querySelector(".file-box__remove");
 export const parseBtn = document.querySelector(".button--parse");
 export const result = document.querySelector(".result");
+export const options = document.querySelector(".options");
+export const selection = document.querySelector(".selection");
