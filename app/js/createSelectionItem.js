@@ -47,8 +47,11 @@ const createSelectionItem = ({title, author}) => {
     });
 
     label.prepend(icon);
+
     li.appendChild(input);
+
     label.appendChild(authorName);
+    
     li.appendChild(label);
     
     return li;

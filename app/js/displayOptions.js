@@ -1,7 +1,5 @@
-import createSelectionItem from "./createSelectionItem";
-import displayResult from "./displayResult";
+
 import {selection} from "./domNodes";
-import createDomElement from "./helpers";
 
 const displaySelectionItems = (items) => {
     

@@ -33,7 +33,9 @@ export const getSelectionItems = (books) => books.map(book => createSelectionIte
 
 export const compose = (...fns) => (arg) => fns.reduce((acc, fn) => fn(acc), arg);
 
-export const clearDomNode = (node) => [...node.children].forEach(el => el.remove());
+export const removeDomElement = el => el.remove();
+
+export const clearDomNode = (node) => [...node.children].forEach(removeDomElement);
 
 export const createDomElement = ({element, attributes, textContent}) => {
 
