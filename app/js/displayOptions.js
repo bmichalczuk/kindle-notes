@@ -1,12 +1,7 @@
-
+import {renderList} from "./helpers";
 import {selection} from "./domNodes";
 
-const displaySelectionItems = (items) => {
-    
-    const frag = document.createDocumentFragment();
-    items.forEach(item => frag.appendChild(item));
-    selection.appendChild(frag);
+const displaySelectionItems = renderList(selection);
 
-};
 
 export default displaySelectionItems;
