@@ -2,6 +2,8 @@ import bookIcon from "../img/book.svg";
 import {createDomElement} from "./helpers";
 
 const createSelectionItem = ({title, author}) => {
+    const id = `${title.split(" ").join("") + author.split(" ").join("")}`;
+
     const li = createDomElement({
         element: "li",
         attributes: {
@@ -12,7 +14,7 @@ const createSelectionItem = ({title, author}) => {
     const input = createDomElement({
         element: "input",
         attributes: {
-            id: `${title + author}`,
+            id,
             type: "checkbox",
             class: "selection__input",
             title: `Add ${title}`
@@ -23,7 +25,7 @@ const createSelectionItem = ({title, author}) => {
         element: "label",
         attributes: {
             class: "selection__label",
-            for: `${title + author}`
+            for: id
         },
         textContent: title
 
