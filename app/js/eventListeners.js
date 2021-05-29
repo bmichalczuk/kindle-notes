@@ -3,8 +3,8 @@ import {dropArea, fileInpt, removeBtn, parseBtn, downloadBtn} from "./domNodes";
 import handleFileInput from "./fileInputHandler";
 import removeFile from "./removeFile";
 import handleParseBtn from "./handleParseBtn";
-import getSeletedNames from "./getSelectedBooks";
-import { getSelectionItems } from "./helpers";
+import handleDownloadBtn from "./handleDownloadBtn";
+import getSelectedBooks from "./getSelectedBooks";
 
 dropArea.addEventListener("dragenter", handleDragEnter);
 
@@ -20,5 +20,7 @@ removeBtn.addEventListener("click", removeFile);
 
 parseBtn.addEventListener("click", handleParseBtn);
 
-downloadBtn.addEventListener("click", getSeletedNames);
+downloadBtn.addEventListener("click", handleDownloadBtn);
+
+
 

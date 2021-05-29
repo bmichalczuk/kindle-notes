@@ -17,7 +17,9 @@ const createSelectionItem = ({title, author}) => {
             id,
             type: "checkbox",
             class: "selection__input",
-            title: `Add ${title}`
+            title: `Add ${title}`,
+            [`data-author`]: author,
+            [`data-title`]: title
         }
     })
 

@@ -37,6 +37,7 @@ export const removeDomElement = el => el.remove();
 
 export const clearDomNode = (node) => [...node.children].forEach(removeDomElement);
 
+
 export const renderList = (target) => (list) => {
     const frag = document.createDocumentFragment();
     list.forEach(item => frag.appendChild(item));
