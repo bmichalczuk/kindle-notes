@@ -27,9 +27,9 @@ export const splitText = (divider) => (text) => text.split(divider);
 
 export const extractEntries = splitText(entryDivider);
 
-export const getDownloadLinks = (books) => books.map(book => createDownloadLink(book));
+export const getDownloadLinks = (books) => books.map(book => createDownloadLink(book));//zrpboc hoc
 
-export const getSelectionItems = (books) => books.map(book => createSelectionItem(book));
+export const getSelectionItems = (books) => books.map(book => createSelectionItem(book));//wyzej
 
 export const compose = (...fns) => (arg) => fns.reduce((acc, fn) => fn(acc), arg);
 
@@ -37,6 +37,12 @@ export const removeDomElement = el => el.remove();
 
 export const clearDomNode = (node) => [...node.children].forEach(removeDomElement);
 
+export const withClearDomNodeBefore = (node) => (fn) => (...args) => {
+    if(node.hasChildNodes()) {
+        clearDomNode(node);
+    }
+    fn(...args);
+};
 
 export const renderList = (target) => (list) => {
     const frag = document.createDocumentFragment();

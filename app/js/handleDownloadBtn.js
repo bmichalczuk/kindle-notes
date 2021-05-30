@@ -1,4 +1,4 @@
-import {eventGuard, compose, getDownloadLinks, getSelectionItems} from "./helpers";
+import {eventGuard, compose, getDownloadLinks} from "./helpers";
 import {getEntries} from "./entries";
 import displayResult from "./displayResult";
 import getSelectedBooks from "./getSelectedBooks";
