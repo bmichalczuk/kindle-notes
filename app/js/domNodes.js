@@ -7,3 +7,4 @@ export const result = document.querySelector(".result");
 export const options = document.querySelector(".options");
 export const selection = document.querySelector(".selection");
 export const downloadBtn = document.querySelector(".button--download");
+export const main = document.querySelector(".content");
