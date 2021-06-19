@@ -1,8 +1,33 @@
-import {renderList, withClearDomNodeBefore} from "./helpers";
-import {selection} from "./domNodes";
+import {createDomElement, withClearDomNodeBefore, renderList} from "./helpers";
+import {options} from "./domNodes";
 
-const displaySelectionItems = renderList(selection);
+const createOptions = (items) => {
+    const frag = document.createDocumentFragment();
 
-const withClearSelectionBefore = withClearDomNodeBefore(selection);
+    const selectionContainer = createDomElement({element: "ul", attributes: {class: "selection"}});
+    
+    const btn = createDomElement({
+        element: "button",
+        attributes: {
+            title: "Download selected items",
+            class: "button button--download"
+        },
+        textContent: "Download"
+    });
 
-export default withClearSelectionBefore(displaySelectionItems);
+    renderList(selectionContainer)(items);
+
+    frag.appendChild(selectionContainer);
+    frag.appendChild(btn);
+    
+    options.appendChild(frag);
+};
+
+export default withClearDomNodeBefore(options)(createOptions);
+
+/*
+    <div class="options">
+        <ul class="selection"></ul>
+        <button title="Download selected items" class="button button--download">Download</button>
+    </div>
+*/
