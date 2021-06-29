@@ -1,6 +1,6 @@
 import {fileName} from "./domNodes";
 
-const displayFileName = name => {
+const displayFileName = (name: string): void => {
     fileName.textContent = name;
 };
 
