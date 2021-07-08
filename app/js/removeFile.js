@@ -1,12 +1,17 @@
-import {fileInpt, result, selection} from "./domNodes";
+import {getDomNode} from "./domNodes";
 import {setEntries} from "./entries";
 import {removeSuccesUpload, eventGuard, clearDomNode} from "./helpers";
+import { selectionNodeClass, resultNodeClass, fileInptClass } from "./consts";
 
 const removeFile = () => {
+    const options = getDomNode(selectionNodeClass);
+    const result = getDomNode(resultNodeClass);
+    const fileInpt = getDomNode(fileInptClass);
+
     fileInpt.value = null;
     setEntries(null);
     clearDomNode(result);
-    clearDomNode(selection);
+    clearDomNode(options);
     removeSuccesUpload();
 };
 

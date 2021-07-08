@@ -1,9 +1,12 @@
 import {createDomElement, withClearDomNodeBefore, renderList} from "./helpers";
-import {options} from "./domNodes";
+import {getDomNode} from "./domNodes";
+import { optionsNodeClass } from "./consts";
 
-const createOptions = (items) => {
+
+
+const createOptions = (items: NodeListOf<Element>) => {
     const frag = document.createDocumentFragment();
-
+    const options = getDomNode(optionsNodeClass);
     const selectionContainer = createDomElement({element: "ul", attributes: {class: "selection"}});
     
     const btn = createDomElement({
@@ -23,7 +26,9 @@ const createOptions = (items) => {
     options.appendChild(frag);
 };
 
-export default withClearDomNodeBefore(options)(createOptions);
+
+
+export default withClearDomNodeBefore(getDomNode(optionsNodeClass))(createOptions);
 
 /*
     <div class="options">

@@ -8,3 +8,23 @@ export const options = document.querySelector(".options");
 export const selection = document.querySelector(".selection");
 export const downloadBtn = document.querySelector(".button--download");
 export const main = document.querySelector(".content");
+
+export const getDomNode = (name: string) => {
+
+    if(!document.querySelector(name)) {
+        throw new Error("There is no such dom element");
+    }
+
+    return document.querySelector(name);
+};
+
+export const getDomNodes = (name: string) => {
+
+    if(!document.querySelector(name)) {
+        throw new Error("There is no such dom element");
+    }
+
+    return document.querySelectorAll(name);
+
+};
+
