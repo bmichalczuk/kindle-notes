@@ -1,4 +1,4 @@
-import {dropArea} from "./domNodes";
+import {dropArea, getDomNode} from "./domNodes";
 import {entryDivider, authorEndSign, authorStartSign} from "./consts";
 import createDownloadLink from "./createDownloadLink";
 import createSelectionItem from "./createSelectionItem";
@@ -36,7 +36,7 @@ export const compose = (...fns: Array<Function>) => (arg: any) => fns.reduce((ac
 
 export const removeDomElement = (el: Element) => el.remove();
 
-export const clearDomNode = (node: Element) => Array.from(node.children).forEach(removeDomElement);
+export const clearDomNode = (node: Element) => Array.from(node.children).forEach(el => removeDomElement(el));
 
 export const withClearDomNodeBefore = (node: Element) => (fn: Function) => (...args: any) => {
     if(node.hasChildNodes()) {
