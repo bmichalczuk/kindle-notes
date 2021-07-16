@@ -9,6 +9,11 @@ export const selectionNodeClass = ".selection";
 export const optionsNodeClass = ".options";
 export const resultNodeClass = ".result";
 export const fileInptClass = ".file-box__input";
+export const removeBtnClass = ".file-box__remove";
+export const selectionClass = ".selection";
+export const downloadBtnClass = ".button--download";
+export const mainNodeClass = ".content";
+
 
 /*
 export const dropArea = document.querySelector(".file-box");
