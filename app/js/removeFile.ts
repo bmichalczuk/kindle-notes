@@ -4,7 +4,7 @@ import {removeSuccesUpload, eventGuard, clearDomNode} from "./helpers";
 import {resultNodeClass, fileInptClass, optionsNodeClass } from "./consts";
 
 const removeFile = () => {
-    const fileInpt = getDomNode(fileInptClass);
+    const fileInpt = getDomNode(fileInptClass) as HTMLInputElement;
     fileInpt.value = null;
     setEntries(null);
     clearDomNode(getDomNode(resultNodeClass));
