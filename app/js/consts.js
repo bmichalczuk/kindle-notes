@@ -13,12 +13,8 @@ export const removeBtnClass = ".file-box__remove";
 export const selectionClass = ".selection";
 export const downloadBtnClass = ".button--download";
 export const mainNodeClass = ".content";
-<<<<<<< HEAD
 export const parseBtnClass = ".button--parse";
-export const selectionNodeClass = ".selection";
 
-=======
->>>>>>> 7f77f4e27db8103cbe12f5ba49c7d934cf6de087
 
 
 /*

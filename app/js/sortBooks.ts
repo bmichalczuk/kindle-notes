@@ -1,6 +1,8 @@
 import {getBookTitle, getAuthor} from "./helpers";
 import {authorEndSign} from "./consts";
-const getBook = (books, entry) => {
+import {Book} from "./types";
+
+const getBook = (books: Book[] | [] , entry: string) => {
     
     const title = getBookTitle(entry);
 
@@ -10,7 +12,7 @@ const getBook = (books, entry) => {
     
     const newEntry = entry.substring(entry.indexOf(authorEndSign) + 1 );
 
-    const book = books.find(book => book.title === title);
+    const book = books.find((book: Book) => book.title === title);
     
     if(!book) {
         const author = getAuthor(entry);
@@ -22,7 +24,7 @@ const getBook = (books, entry) => {
     return books;
 };
 
-const sortBooks = (entries) => entries.reduce(getBook, []);
+const sortBooks = (entries: string[]) => entries.reduce(getBook, []);
 
 export default sortBooks;
 

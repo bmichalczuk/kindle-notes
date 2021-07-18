@@ -6,7 +6,6 @@ import getSelectedBooks from "./getSelectedBooks";
 
 const filterSelectedBooks = books => {
     const selected = getSelectedBooks();
-    console.log(selected);
     return books.filter(({title,author}) => selected.some(obj => obj.author === author && obj.title === title));
 };
 
