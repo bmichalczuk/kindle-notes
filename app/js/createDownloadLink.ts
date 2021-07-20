@@ -1,7 +1,7 @@
 import icon from "../img/txtIcon.svg";
 import {createDomElement} from "./helpers";
 
-const createDownloadLink = ({title, author, entries}) => {
+const createDownloadLink = ({title, author, entries}: {title: string, author: string, entries: string[]}) => {
 
     const content = entries.join();
     const text = new Blob([content], { type: 'text/plain' });
@@ -13,7 +13,7 @@ const createDownloadLink = ({title, author, entries}) => {
             download: title,
             title: `Click to download ${title} notes`
         }
-    });
+    }) as HTMLAnchorElement;
 
     const img = createDomElement({
             element: "img",
@@ -44,7 +44,8 @@ const createDownloadLink = ({title, author, entries}) => {
     if (window.webkitURL != null) {
         a.href = window.webkitURL.createObjectURL(text);
     } else {
-        a.href = `data:text/plain;charset=utf-8,${encodeURIComponent(text)}`;
+        
+        a.href = `data:text/plain;charset=utf-8,${encodeURIComponent(`${text}`)}`;
     }
 
     

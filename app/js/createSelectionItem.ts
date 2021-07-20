@@ -1,7 +1,7 @@
 import bookIcon from "../img/book.svg";
 import {createDomElement} from "./helpers";
 
-const createSelectionItem = ({title, author, entries}) => {
+const createSelectionItem = ({title, author}: {title: string, author: string}) => {
     const id = `${title.split(" ").join("") + author.split(" ").join("")}`;
 
     const li = createDomElement({

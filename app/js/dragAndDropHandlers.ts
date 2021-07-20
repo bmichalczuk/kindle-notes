@@ -4,15 +4,15 @@ import {eventGuard, markSuccesUpload} from "./helpers";
 import displayFileName from "./displayFileName";
 import parseFile from "./parseFile";
 
-export const handleDragEnter = eventGuard((e) => {
+export const handleDragEnter = eventGuard((e: DragEvent) => {
     dropArea.classList.add("file-box--hover")
 });
 
-export const handleDragLeave = eventGuard((e) => {
+export const handleDragLeave = eventGuard((e: DragEvent) => {
     dropArea.classList.remove("file-box--hover");
 });
 
-export const handleDrop = eventGuard((e) => {
+export const handleDrop = eventGuard((e: DragEvent) => {
     const file = e.dataTransfer.files[0];
     markSuccesUpload();
     readFile(file, parseFile);

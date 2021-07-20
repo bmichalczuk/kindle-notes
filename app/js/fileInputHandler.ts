@@ -3,8 +3,8 @@ import {eventGuard, markSuccesUpload} from "./helpers";
 import displayFileName from "./displayFileName";
 import parseFile from "./parseFile";
 
-const handleFileInput = (e) => {
-    const file = e.target.files[0]
+const handleFileInput = (e: Event) => {
+    const file = (e.target as HTMLInputElement).files[0]
     markSuccesUpload();
     readFile(file, parseFile);
     displayFileName(file.name);
