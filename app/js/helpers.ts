@@ -28,9 +28,9 @@ export const splitText = (divider: string) => (text: string) => text.split(divid
 
 export const extractEntries = splitText(entryDivider);
 
-export const getDownloadLinks = (books: Array<object>) => books.map((book: Book) => createDownloadLink(book));//zrpboc hoc
+export const getDownloadLinks = (books: Array<Book>) => books.map((book: Book) => createDownloadLink(book));//zrpboc hoc
 
-export const getSelectionItems = (books: Array<object>) => books.map((book: Book) => createSelectionItem(book));//wyzej
+export const getSelectionItems = (books: Array<Book>) => books.map((book: Book) => createSelectionItem(book));//wyzej
 
 export const compose = (...fns: Array<Function>) => (arg: any) => fns.reduce((acc, fn) => fn(acc), arg);
 
