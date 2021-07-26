@@ -16,6 +16,10 @@ const btnGuard = (fn: Function) => (e:{target: HTMLElement}) => {
     };
 };
 
-const handleDownloadBtn = (e: Event) => compose(getEntries, filterSelectedBooks, getDownloadLinks, displayResult)("");
+const handleDownloadBtn = (e: {target: HTMLButtonElement}) => {
+    if(e.target.classList.contains("button--download")) {
+        return compose(getEntries, filterSelectedBooks, getDownloadLinks, displayResult)("");
+    };
+};
 
-export default btnGuard(eventGuard((handleDownloadBtn)));
+export default eventGuard((handleDownloadBtn));
