@@ -1,5 +1,6 @@
 import icon from "../img/txtIcon.svg";
 import {createDomElement} from "./helpers";
+import { downloadIconClass, downloadNodeClass, downloadTitleClass, downloadAuthorClass } from "./consts";
 
 const createDownloadLink = ({title, author, entries}: {title: string, author: string, entries: string[]}) => {
 
@@ -9,7 +10,7 @@ const createDownloadLink = ({title, author, entries}: {title: string, author: st
     const a = createDomElement({
         element: "a",
         attributes: {
-            class: "download",
+            class: downloadNodeClass,
             download: title,
             title: `Click to download ${title} notes`
         }
@@ -18,7 +19,7 @@ const createDownloadLink = ({title, author, entries}: {title: string, author: st
     const img = createDomElement({
             element: "img",
             attributes: {
-                class: "download__icon",
+                class: downloadIconClass,
                 alt: "book icon",
                 src: icon
             }}
@@ -27,7 +28,7 @@ const createDownloadLink = ({title, author, entries}: {title: string, author: st
     const bookTitle = createDomElement({
         element: "div",
         attributes: {
-            class: "download__title"
+            class: downloadTitleClass
         },
         textContent: title
     });
@@ -35,7 +36,7 @@ const createDownloadLink = ({title, author, entries}: {title: string, author: st
     const bookAuthor = createDomElement({
         element: "div",
         attributes: {
-            class: "download__author",
+            class: downloadAuthorClass,
 
         },
         textContent: `by ${author}`
