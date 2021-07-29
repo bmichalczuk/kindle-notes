@@ -1,6 +1,8 @@
 import bookIcon from "../img/book.svg";
 import {createDomElement} from "./helpers";
 import {Book} from "./types";
+import { selectionItemClass, selectionLabelClass, selectionInptClass, selectionIconClass, selectionAuthorClass} from "./consts";
+
 
 const createSelectionItem = ({title, author}: Book) => {
     const id = `${title.split(" ").join("") + author.split(" ").join("")}`;
@@ -8,7 +10,7 @@ const createSelectionItem = ({title, author}: Book) => {
     const li = createDomElement({
         element: "li",
         attributes: {
-            class: "selection__item"
+            class: selectionItemClass
         }
     })
 
@@ -17,7 +19,7 @@ const createSelectionItem = ({title, author}: Book) => {
         attributes: {
             id,
             type: "checkbox",
-            class: "selection__input",
+            class: selectionInptClass,
             title: `Add ${title}`,
             [`data-author`]: author,
             [`data-title`]: title
@@ -27,7 +29,7 @@ const createSelectionItem = ({title, author}: Book) => {
     const label = createDomElement({
         element: "label",
         attributes: {
-            class: "selection__label",
+            class: selectionLabelClass,
             for: id
         },
         textContent: title
@@ -37,7 +39,7 @@ const createSelectionItem = ({title, author}: Book) => {
     const authorName = createDomElement({
         element: "span",
         attributes: {
-            class: "selection__author"
+            class: selectionAuthorClass
         },
         textContent: author
     });
@@ -45,7 +47,7 @@ const createSelectionItem = ({title, author}: Book) => {
     const icon = createDomElement({
         element: "img",
         attributes: {
-            class: "selection__icon",
+            class: selectionIconClass,
             src: bookIcon,
             alt: "book icon"
         }
