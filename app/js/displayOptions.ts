@@ -1,19 +1,19 @@
 import {createDomElement, withClearDomNodeBefore, renderList} from "./helpers";
 import {getDomNode} from "./domNodes";
-import { optionsNodeClass } from "./consts";
+import { optionsNodeClass, selectionNodeClass, btnNodeClass, downloadBtnClass } from "./consts";
 
 
 
 const createOptions = (items: NodeListOf<Element>) => {
     const frag = document.createDocumentFragment();
-    const options = getDomNode(optionsNodeClass);
-    const selectionContainer = createDomElement({element: "ul", attributes: {class: "selection"}});
+    const options = getDomNode(`.${optionsNodeClass}`);
+    const selectionContainer = createDomElement({element: "ul", attributes: {class: selectionNodeClass}});
     
     const btn = createDomElement({
         element: "button",
         attributes: {
             title: "Download selected items",
-            class: "button button--download"
+            class: `${btnNodeClass} ${downloadBtnClass}`
         },
         textContent: "Download"
     });
@@ -28,7 +28,7 @@ const createOptions = (items: NodeListOf<Element>) => {
 
 
 
-export default withClearDomNodeBefore(getDomNode(optionsNodeClass))(createOptions);
+export default withClearDomNodeBefore(getDomNode(`.${optionsNodeClass}`))(createOptions);
 
 /*
     <div class="options">
