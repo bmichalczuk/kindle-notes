@@ -3,6 +3,7 @@ import {entryDivider, authorEndSign, authorStartSign} from "./consts";
 import createDownloadLink from "./createDownloadLink";
 import createSelectionItem from "./createSelectionItem";
 import {Book} from "./types";
+import { fileBoxHoverClass, fileBoxSuccesClass } from "./consts";
 
 export const eventGuard = (func: Function) => (e: Event) : Function => {
     e.preventDefault();
@@ -11,11 +12,11 @@ export const eventGuard = (func: Function) => (e: Event) : Function => {
 };
 
 export const markSuccesUpload = () => {
-    dropArea.classList.contains("file-box--hover") && dropArea.classList.remove("file-box--hover");
-    !dropArea.classList.contains("file-box--succes") && dropArea.classList.add("file-box--succes");
+    dropArea.classList.contains(fileBoxHoverClass) && dropArea.classList.remove(fileBoxHoverClass);
+    !dropArea.classList.contains(fileBoxSuccesClass) && dropArea.classList.add(fileBoxSuccesClass);
 };
 
-export const removeSuccesUpload = () => dropArea.classList.remove("file-box--succes");
+export const removeSuccesUpload = () => dropArea.classList.remove(fileBoxSuccesClass);
 
 export const getBookTitle = (entry: string) => {
     const titleEnd = entry.indexOf(authorStartSign);

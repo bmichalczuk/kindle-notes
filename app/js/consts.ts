@@ -24,6 +24,7 @@ export const fileInptClass = "file-box__input";
 export const fileNameClass = "file-box__name";
 export const fileBoxClass = "file-box";
 export const fileBoxHoverClass = "file-box--hover";
+export const fileBoxSuccesClass = "file-box--succes";
 
 export const btnNodeClass = "button";
 export const removeBtnClass = "file-box__remove";
