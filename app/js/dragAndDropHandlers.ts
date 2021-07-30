@@ -3,13 +3,14 @@ import readFile from "./readFile";
 import {eventGuard, markSuccesUpload} from "./helpers";
 import displayFileName from "./displayFileName";
 import parseFile from "./parseFile";
+import { fileBoxHoverClass } from "./consts";
 
 export const handleDragEnter = eventGuard((e: DragEvent) => {
-    dropArea.classList.add("file-box--hover")
+    dropArea.classList.add(fileBoxHoverClass)
 });
 
 export const handleDragLeave = eventGuard((e: DragEvent) => {
-    dropArea.classList.remove("file-box--hover");
+    dropArea.classList.remove(fileBoxHoverClass);
 });
 
 export const handleDrop = eventGuard((e: DragEvent) => {
