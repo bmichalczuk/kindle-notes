@@ -3,6 +3,7 @@ import {getEntries} from "./entries";
 import displayResult from "./displayResult";
 import getSelectedBooks from "./getSelectedBooks";
 import { Book } from "./types";
+import { downloadBtnClass } from "./consts";
 
 
 const filterSelectedBooks = (books: Book[]) => {
@@ -11,13 +12,13 @@ const filterSelectedBooks = (books: Book[]) => {
 };
 
 const btnGuard = (fn: Function) => (e:{target: HTMLElement}) => {
-    if(e.target.classList.contains("button--download")) {
+    if(e.target.classList.contains(downloadBtnClass)) {
         return fn(e);
     };
 };
 
 const handleDownloadBtn = (e: {target: HTMLButtonElement}) => {
-    if(e.target.classList.contains("button--download")) {
+    if(e.target.classList.contains(downloadBtnClass)) {
         return compose(getEntries, filterSelectedBooks, getDownloadLinks, displayResult)("");
     };
 };
