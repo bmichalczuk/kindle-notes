@@ -1,13 +1,26 @@
-export const dropArea = document.querySelector(".file-box");
-export const fileInpt = document.querySelector(".file-box__input");
-export const fileName = document.querySelector(".file-box__name");
-export const removeBtn = document.querySelector(".file-box__remove");
-export const parseBtn = document.querySelector(".button--parse");
-export const result = document.querySelector(".result");
-export const options = document.querySelector(".options");
-export const selection = document.querySelector(".selection");
-export const downloadBtn = document.querySelector(".button--download");
-export const main = document.querySelector(".content");
+import {
+    dropAreaClass,
+    fileInptClass, 
+    fileNameClass, 
+    removeBtnClass, 
+    parseBtnClass, 
+    resultNodeClass, 
+    optionsNodeClass, 
+    selectionNodeClass,
+    downloadBtnClass, 
+    contentNodeClass
+} from "./consts"
+
+export const dropArea = document.querySelector(`.${dropAreaClass}`);
+export const fileInpt = document.querySelector(`.${fileInptClass}`);
+export const fileName = document.querySelector(`.${fileNameClass}`);
+export const removeBtn = document.querySelector(`.${removeBtnClass}`);
+export const parseBtn = document.querySelector(`.${parseBtnClass}`);
+export const result = document.querySelector(`.${resultNodeClass}`);
+export const options = document.querySelector(`.${optionsNodeClass}`);
+export const selection = document.querySelector(`.${selectionNodeClass}`);
+export const downloadBtn = document.querySelector(`.${downloadBtnClass}`);
+export const main = document.querySelector(`.${contentNodeClass}`);
 
 export const getDomNode = (name: string) => {
 
