@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,30 @@
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="app">
+      <header class="header">
+        <h1 class="heading">Kindle notes</h1>
+        <div class="subheading">manage your kindle notes</div>
+      </header>
+      <main class="main">
+        <form class="droparea">
+          <input
+            type="file"
+            title="Add your My Clippings file"
+            class="visually-hidden"
+            id="file-input"
+          />
+          <label
+            for="file-input"
+            class="droparea__label"
+            title="Click or drop Your 'My Clippings.txt' file here."
+          >
+            Click or drop Your "My Clippings.txt" file here.</label
+          >
+        </form>
+      </main>
+      <footer class="footer">bmichalczuk @2024</footer>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
